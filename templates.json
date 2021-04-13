@@ -21,9 +21,6 @@
 		{
 			"title": "Khameleon ERP",
 			"type": 2,
-			"categories": [
-				"ERP"
-			],
 			"description": "",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
 			"platform": "linux",
