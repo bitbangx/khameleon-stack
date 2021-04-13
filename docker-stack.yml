@@ -3,8 +3,8 @@ version: "3.7"
 services:
 
   backend:
-    image: registry.voodoo-dev.com/kameleon-backend:latest
     container_name: kameleon-backend
+    image: registry.voodoo-dev.com/kameleon-backend:latest
     restart: always
     ports:
       - 3069:3069
@@ -16,14 +16,15 @@ services:
       - POSTGRES_MAX_CLIENTS_PER_POOL=${POSTGRES_MAX_CLIENTS_PER_POOL}
       - JWT_SECRET=${JWT_SECRET}
       - STORAGE_MODE=${STORAGE_MODE}
+      - STORAGE_LOCAL_ROOT=/data
     volumes:
       - ${HOST_STORAGE_ROOT:-/var}:/data
     networks:
       - app-network
 
   frontend:
-    image: registry.voodoo-dev.com/kameleon-frontend:latest
     container_name: kameleon-frontend
+    image: registry.voodoo-dev.com/kameleon-frontend:latest
     restart: always
     ports:
       - 8069:8069
@@ -35,17 +36,14 @@ services:
 
   nginx:
     container_name: kameleon-nginx
-    image: nginx:latest
+    image: registry.voodoo-dev.com/kameleon-nginx:latest
     restart: always
     ports:
       - 80:80
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
     networks:
       - app-network
     environment: 
       - KAMELEON_DOMAIN=${KAMELEON_DOMAIN:-kameleon.com}
-    command: /bin/bash -c "export DOLLAR='$$'; envsubst < /etc/nginx/conf.d/kameleon.conf.template > /etc/nginx/conf.d/default.conf && cat /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
   db:
     container_name: kameleon-db
