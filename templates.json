@@ -17,21 +17,6 @@
 					"name": "KAMELEON_DOMAIN",
 					"label": "ERP domain"
 				},
-        {
-					"name": "STORAGE_MODE",
-					"label": "Storage mode",
-          "select": [
-            {
-              "text": "Local Storage",
-              "value": "local",
-              "default": true
-            }
-          ]
-				},
-        {
-					"name": "HOST_STORAGE_ROOT",
-					"label": "Host storage root"
-				},
 				{
 					"name": "POSTGRES_SERVER",
 					"label": "Postgres Server",
@@ -71,6 +56,21 @@
 					"name": "PGADMIN_CONFIG_CONSOLE_LOG_LEVEL",
 					"label": "PgAdmin Console Log Level",
           "default": "10"
+				},
+        {
+					"name": "STORAGE_MODE",
+					"label": "Storage mode",
+          "select": [
+            {
+              "text": "Local Storage",
+              "value": "local",
+              "default": true
+            }
+          ]
+				},
+        {
+					"name": "HOST_STORAGE_ROOT",
+					"label": "Host storage root"
 				},
 				{
 					"name": "JWT_SECRET",
