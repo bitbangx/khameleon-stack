@@ -13,13 +13,69 @@
 				"stackfile": "docker-stack.yml"
 			},
 			"env": [
+				{
+					"name": "KAMELEON_DOMAIN",
+					"label": "ERP domain"
+				},
+        {
+					"name": "STORAGE_MODE",
+					"label": "Storage mode",
+          "select": [
+            {
+              "text": "Local Storage",
+              "value": "local",
+              "default": true
+            }
+          ]
+				},
         {
 					"name": "HOST_STORAGE_ROOT",
 					"label": "Host storage root"
 				},
 				{
-					"name": "KAMELEON_DOMAIN",
-					"label": "ERP domain"
+					"name": "POSTGRES_SERVER",
+					"label": "Postgres Server",
+          "default": "db"
+				},
+				{
+					"name": "POSTGRES_DB",
+					"label": "Postgres DB",
+          "default": "kameleon"
+				},
+				{
+					"name": "POSTGRES_USER",
+					"label": "Postgres User",
+          "default": "postgres"
+				},
+				{
+					"name": "POSTGRES_PASSWORD",
+					"label": "Postgres Password",
+          "default": "postgress"
+				},
+				{
+					"name": "POSTGRES_MAX_CLIENTS_PER_POOL",
+					"label": "Postgres Max clients per Pool",
+          "default": "100"
+				},
+				{
+					"name": "PGADMIN_DEFAULT_EMAIL",
+					"label": "PgAdmin Default Email",
+          "default": "root@kameleon.com"
+				},
+				{
+					"name": "PGADMIN_DEFAULT_PASSWORD",
+					"label": "PgAdmin Default Password",
+          "default": "password"
+				},
+				{
+					"name": "PGADMIN_CONFIG_CONSOLE_LOG_LEVEL",
+					"label": "PgAdmin Console Log Level",
+          "default": "10"
+				},
+				{
+					"name": "JWT_SECRET",
+					"label": "JWT Secret",
+          "default": "53baf929-1971-4bdf-9448-fa10a385206e"
 				}
 			]
 		}
