@@ -31,8 +31,7 @@ services:
       - app-network
     environment: 
       - KAMELEON_DOMAIN=${KAMELEON_DOMAIN:-kameleon.com}
-    env_file: 
-      - ./erp/.prod.env
+      - API_URL=kameleon-backend:8069
 
   nginx:
     container_name: kameleon-nginx
