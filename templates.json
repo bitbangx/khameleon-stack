@@ -1,0 +1,30 @@
+
+{
+	"version": "2",
+	"templates": [
+		{
+			"title": "Khameleon ERP",
+			"type": 2,
+			"categories": [
+				"ERP"
+			],
+			"description": "",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
+			"platform": "linux",
+			"repository": {
+				"url": "https://github.com/bitbangx/khameleon-stack",
+				"stackfile": "docker-stack.yml"
+			},
+			"env": [
+        {
+					"name": "HOST_STORAGE_ROOT",
+					"label": "Host storage root"
+				},
+				{
+					"name": "KAMELEON_DOMAIN",
+					"label": "ERP domain"
+				}
+			]
+		}
+	]
+}
