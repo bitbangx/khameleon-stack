@@ -24,7 +24,7 @@
 			"description": "Open-source search and analytics engine",
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
-			"image": "elasticsearch:latest",
+			"image": "elasticsearch:7.12.0",
 			"env": [
 				{
 					"name": "discovery.type",
