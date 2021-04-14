@@ -3,6 +3,49 @@
 	"version": "2",
 	"templates": [
 		{
+			"type": 1,
+			"title": "Places Updater",
+			"description": "",
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+			"registry": "registry.voodoo-dev.com",
+			"image": "places:latest",
+			"env": [
+				{
+					"name": "ELASTICSEARCH_NODE",
+					"label": "Elasticsearch Node",
+					"default": "localhost:9200"
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "Elastisearch",
+			"description": "Open-source search and analytics engine",
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
+			"image": "elasticsearch:latest",
+			"env": [
+				{
+					"name": "discovery.type",
+					"label": "discovery.type",
+					"default": "single-node"
+				},
+				{
+					"name": "vm.max_map_count",
+					"label": "vm.max_map_count",
+					"default": "262144"
+				}
+			],
+			"ports": [
+				"9200/tcp",
+				"9300/tcp"
+			],
+			"volumes": [{
+				"container": "/usr/share/elasticsearch/data"
+			}]
+		},
+		{
 			"title": "Khameleon ERP",
 			"type": 3,
 			"description": "",
